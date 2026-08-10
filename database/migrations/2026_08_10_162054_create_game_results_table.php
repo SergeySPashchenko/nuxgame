@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('game_results', function (Blueprint $table) {
             $table->id();
             // Intentionally player_id, not access_link_id
-            $table->foreignId('player_id')->constrained()->cascadeOnDelete()->index();
+            $table->foreignId('player_id')->constrained()->cascadeOnDelete();
             $table->unsignedSmallInteger('number');
             $table->boolean('is_win');
             // Store payout precisely (percent of number may be fractional)

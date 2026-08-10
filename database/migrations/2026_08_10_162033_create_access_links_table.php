@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('access_links', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('player_id')->constrained()->cascadeOnDelete()->index();
+            $table->foreignId('player_id')->constrained()->cascadeOnDelete();
             // Random token string (Str::random(64)) + UNIQUE index
             $table->string('token', 64)->unique();
             $table->timestamp('expires_at');
